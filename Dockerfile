@@ -55,6 +55,8 @@ RUN set -ex \
   && mv /opt/zpush/backend/imap/config.php /opt/zpush/backend/imap/config.php.dist
 
 VOLUME ["/state"]
+VOLUME ["/config"]
+
 EXPOSE 80
 
 ENTRYPOINT ["/sbin/tini", "--"]

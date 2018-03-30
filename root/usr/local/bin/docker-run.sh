@@ -6,9 +6,7 @@ mkdir -p /state /var/log/z-push
 chown -R zpush:zpush /state /opt/zpush /var/log/z-push
 
 cp /etc/supervisord.conf.dist /etc/supervisord.conf
-if [ "$DEBUG" = 1 ]; then
-  sed -i "|z-push-error.log|z-push-error.log /var/log/z-push/z-push.log|" /etc/supervisord.conf
-fi
+if [ "$DEBUG" = 1 ] && sed -i "|z-push-error.log|z-push-error.log /var/log/z-push/z-push.log|" /etc/supervisord.conf
 
 sed -e "s/define('BACKEND_PROVIDER', '')/define('BACKEND_PROVIDER', 'BackendIMAP')/" \
     -e "s|define('STATE_DIR', '/var/lib/z-push/')|define('STATE_DIR', '/state/')|" \
