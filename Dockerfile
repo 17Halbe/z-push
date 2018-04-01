@@ -29,9 +29,9 @@ RUN set -ex \
   supervisor \
   tar \
   tini \
-  wget \
+  wget
   # Install php
-  && docker-php-ext-configure imap --with-imap --with-imap-ssl \
+RUN docker-php-ext-configure imap --with-imap --with-imap-ssl \
   && docker-php-ext-install imap pcntl sysvmsg sysvsem sysvshm \
   && pecl install APCu-5.1.8 \
   && docker-php-ext-enable apcu \
@@ -40,13 +40,13 @@ RUN set -ex \
   alpine-sdk \
   autoconf \
   openssl-dev \
-  pcre-dev \
+  pcre-dev
   # Add user for z-push
-  && addgroup -g ${GID} zpush \
+RUN addgroup -g ${GID} zpush \
   && adduser -u ${UID} -h /opt/zpush -H -G zpush -s /sbin/nologin -D zpush \
-  && mkdir -p /opt/zpush \
+  && mkdir -p /opt/zpush
   # Install z-push
-  && wget -q -O /tmp/zpush.tgz "$ZPUSH_URL" \
+RUN wget -q -O /tmp/zpush.tgz "$ZPUSH_URL" \
   && if [ "$ZPUSH_CSUM" != "$(md5sum /tmp/zpush.tgz | awk '{print($1)}')" ]; then echo "Wrong md5sum of downloaded file!"; exit 1; fi \
   && tar -zxf /tmp/zpush.tgz -C /opt/zpush --strip-components=1 \
   && rm /tmp/zpush.tgz \
