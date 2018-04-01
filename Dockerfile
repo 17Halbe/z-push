@@ -5,7 +5,7 @@ ARG ZPUSH_CSUM=07290996f00b988a95ff66932d2b8127
 ARG UID=1513
 ARG GID=1513
 
-ENV TZ=Europe/Zurich \
+ENV TIMEZONE=Europe/Zurich \
   IMAP_SERVER=localhost \
   IMAP_PORT=143 \
   SMTP_SERVER=tls://localhost \
