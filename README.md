@@ -1,6 +1,6 @@
 ## Z-Push Docker Image for tvial/docker-mailserver
 
-This z-push image is designed to work in lieu with the tvial/docker-mailserver (see [tomav/docker-mailserver](https://github.com/tomav/docker-mailserver) for further information.)
+This [z-push docker image](https://hub.docker.com/r/17halbe/z-push/) is designed to work in lieu with the **tvial/docker-mailserver** (see [tomav/docker-mailserver](https://github.com/tomav/docker-mailserver) for further information.)
 
 #### The following variables are currently used:
 
@@ -9,6 +9,7 @@ This z-push image is designed to work in lieu with the tvial/docker-mailserver (
 - `IMAP_PORT`: imap port
 - `SMTP_SERVER`: smtp server address/ip
 - `SMTP_PORT`: smtp port
+- `DEBUG`: [0/1] disables/enables verbose logging.
 
 ## Device Setup
 
@@ -30,6 +31,7 @@ Example:
   -e IMAP_PORT=143 \
   -e SMTP_SERVER=smtp.yourdomain.tld \
   -e SMTP_PORT=465 \
+  -e DEBUG=1 \
   17halbe/z-push`
 ```
 The used configuration is being put out to the docker logs upon container start, and can be read by `docker logs <your_container_name>`
