@@ -1,4 +1,4 @@
-## Z-Push Image for tvial/docker-mailserver
+## Z-Push Docker Image for tvial/docker-mailserver
 
 This z-push image is designed to work in lieu with the tvial/docker-mailserver (see [tomav/docker-mailserver](https://github.com/tomav/docker-mailserver) for further information.)
 
