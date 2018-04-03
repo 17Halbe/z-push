@@ -10,6 +10,10 @@ This z-push image is designed to work in lieu with the tvial/docker-mailserver (
 - `SMTP_SERVER`: smtp server address/ip
 - `SMTP_PORT`: smtp port
 
+## Device Setup
+
+For a quick guide, how to setup up your mobile device, have a look at the [Zarafa-Homepage](https://doc.zarafa.com/7.1/User_Manual/en-US/html/_configure_mobile_platforms.html)
+
 ## Configuration
 
 If you need to change the default configuration, you can do so by placing a `config.php` and/or a `imap.php` into a folder which has to be mounted as a volume to `/config/` inside the container.
